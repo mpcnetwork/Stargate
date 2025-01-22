@@ -1,0 +1,27 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter The Stargate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stargate-container">
+        <h1>Enter The Stargate</h1>
+        <img src="afbeeldingen\stargate.png" alt="stargate afbeelding" class="stargate">
+        <div class="vortex" onclick="enterStargate()"></div>
+    </div>
+
+    <script>
+        function enterStargate() {
+            const vortex = document.querySelector('.vortex');
+            vortex.classList.add('travel');
+            setTimeout(() => {
+                window.location.href = 'startpagina.html';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

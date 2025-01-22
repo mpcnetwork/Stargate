@@ -1,0 +1,105 @@
+/* styles.css 
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.stargate-container {
+    position: relative;
+    display: inline-block;
+}
+
+.stargate {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.vortex {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #0ff;
+    border-radius: 50%;
+    animation: spin 4s linear infinite;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 2s;
+}
+
+.vortex.travel {
+    animation: none;
+    transform: scale(10);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+*/ 
+
+/* styles.css */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.stargate-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stargate {
+    width: 300px;
+    height: auto;
+}
+
+.vortex {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #0ff;
+    border-radius: 50%;
+    animation: spin 4s linear infinite;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: transform 2s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.vortex.travel {
+    animation: none;
+    transform: scale(10);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
