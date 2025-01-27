@@ -146,3 +146,27 @@ Amazon Web Services (AWS): AWS provides AI services such as Amazon Comprehend, A
 IBM Watson: IBM offers AI and machine learning services through Watson, including language processing and data insights. IBM Watson
 
 These examples should give you a good starting point for integrating AI models and cloud services into your projects. If you have specific questions or need further details, feel free to ask!
+
+stargate date 27-01-2025
+Camera openen
+import cv2
+
+# Open de camera
+cap = cv2.VideoCapture(0)
+
+while True:
+    # Lees een frame van de camera
+    ret, frame = cap.read()
+
+    # Toon het frame
+    cv2.imshow('Camera', frame)
+
+    # Wacht op de 'q' toets om af te sluiten
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Maak de camera schoon
+cap.release()
+cv2.destroyAllWindows()
+
+Waar in route van camera naar scherm bekijkt ai "de beelden"?
