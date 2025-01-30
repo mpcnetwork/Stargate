@@ -166,6 +166,43 @@ while True:
         break
 
 # Maak de camera schoon
+
+Stargatedate 30-01-2025
+Je kunt een verzameling Python-bestanden met verschillende programma's op GitHub plaatsen en deze bestanden vervolgens vanuit je lokale scripts oproepen en gebruiken. Dit is een krachtige manier om code te delen, hergebruiken en te organiseren.
+
+Een typisch workflow zou er zo uit kunnen zien:
+
+Opslaan op GitHub: Plaats je Python-bestanden op GitHub in een publieke of private repository.
+
+Oproepen van bestanden: Gebruik een lokale script om de bestanden van GitHub op te halen en te importeren.
+
+Hier is een concreet voorbeeld van hoe je dat kunt doen:
+
+main.py (lokaal bestand):
+
+python
+import requests
+
+# URL naar je Python-bestand op GitHub
+url_deel1 = "https://raw.githubusercontent.com/user/repository/main/deel1.py"
+url_deel2 = "https://raw.githubusercontent.com/user/repository/main/deel2.py"
+
+# Ophalen en uitvoeren van deel1.py
+response_deel1 = requests.get(url_deel1)
+exec(response_deel1.text)
+
+# Ophalen en uitvoeren van deel2.py
+response_deel2 = requests.get(url_deel2)
+exec(response_deel2.text)
+
+# Nu kun je de functies gebruiken die in deel1.py en deel2.py zijn gedefinieerd
+result = double(5)
+print(f"The result is: {result}")
+Zorg ervoor dat je de URL's aanpast naar jouw specifieke GitHub-repository en bestandspaden. Door dit te doen, kun je effectief je code op GitHub beheren en toch lokaal gebruiken zonder de noodzaak om alle bestanden handmatig te kopiëren.
+
+Ik ben blij dat de test werkt! 🚀 Als je nog meer vragen hebt of verdere uitleg nodig hebt, laat het me gerust weten! 😊
+
+Noot: Zorg ervoor dat de code die je uitvoert betrouwbaar is en dat je eventuele beveiligingsrisico's begrijpt, vooral bij het gebruiken van exec(). Altijd controleren wat je importeert en uitvoert. 🚀
 cap.release()
 cv2.destroyAllWindows()
 
