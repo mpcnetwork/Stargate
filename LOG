@@ -166,6 +166,10 @@ while True:
         break
 
 # Maak de camera schoon
+cap.release()
+cv2.destroyAllWindows()
+
+Waar in route van camera naar scherm bekijkt ai "de beelden"?
 
 Stargatedate 30-01-2025
 Je kunt een verzameling Python-bestanden met verschillende programma's op GitHub plaatsen en deze bestanden vervolgens vanuit je lokale scripts oproepen en gebruiken. Dit is een krachtige manier om code te delen, hergebruiken en te organiseren.
@@ -203,7 +207,3 @@ Zorg ervoor dat je de URL's aanpast naar jouw specifieke GitHub-repository en be
 Ik ben blij dat de test werkt! 🚀 Als je nog meer vragen hebt of verdere uitleg nodig hebt, laat het me gerust weten! 😊
 
 Noot: Zorg ervoor dat de code die je uitvoert betrouwbaar is en dat je eventuele beveiligingsrisico's begrijpt, vooral bij het gebruiken van exec(). Altijd controleren wat je importeert en uitvoert. 🚀
-cap.release()
-cv2.destroyAllWindows()
-
-Waar in route van camera naar scherm bekijkt ai "de beelden"?
