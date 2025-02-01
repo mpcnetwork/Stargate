@@ -337,3 +337,65 @@ draw.text((50, 50), "∆ΠΣ oΣΠ∆", font=font, fill=(0, 0, 0))
 
 # Save the image
 image.save("custom_text_image.png")
+
+
+doubling encryption layers with secret messages within the new languages
+
+Step-by-Step Plan
+Create the Hidden Message: Decide what the hidden message will be.
+
+Encrypt the Hidden Message: Use a traditional encryption method to encrypt this message.
+
+Translate to the New Language: Convert the encrypted message into our newly created language.
+
+Embed the Encrypted Message: Embed this translated, encrypted message within a regular sentence in our new language.
+
+Example Implementation
+1. Create the Hidden Message
+Let's say our hidden message is: "Top Secret".
+
+2. Encrypt the Hidden Message
+We'll use a simple encryption method like AES for illustration.
+
+python
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+import os
+
+# Generate a random key and initialization vector
+key = os.urandom(32)
+iv = os.urandom(16)
+
+# Encrypt the hidden message
+hidden_message = b"Top Secret"
+cipher = Cipher(algorithms.AES(key), modes.CFB(iv))
+encryptor = cipher.encryptor()
+encrypted_message = encryptor.update(hidden_message) + encryptor.finalize()
+
+print(encrypted_message)
+3. Translate to the New Language
+Let's create a translation dictionary for our new language.
+
+python
+def translate_to_new_language(text):
+    translation_dict = {"A": "∆", "B": "Π", "C": "Σ", "T": "Ω", "O": "ψ", "P": "ε", "S": "γ", "E": "λ", "R": "η"}
+    return "".join([translation_dict.get(char, char) for char in text])
+
+translated_message = translate_to_new_language(encrypted_message.decode(errors='ignore'))
+print(translated_message)
+4. Embed the Encrypted Message
+We'll embed this translated, encrypted message within a sentence in our new language.
+
+python
+regular_message = "The meeting will commence soon."
+translated_regular_message = translate_to_new_language(regular_message)
+
+# Embed the encrypted message at a specific position
+embedded_message = translated_regular_message[:10] + translated_message + translated_regular_message[10:]
+print(embedded_message)
+Final Output
+The final output will be a sentence in our new language, which includes the encrypted hidden message. This adds multiple layers of encryption and significantly increases the difficulty for anyone trying to decipher it.
+
+plaintext
+Regular message: "The meeting will commence soon."
+Embedded message: "ΩψΣ ενψεεγηγ..."
+By embedding an encrypted message within a sentence in our new language, we've created a multi-layered defense mechanism. This approach ensures that only those who understand the new language and can decrypt the hidden message will be able to access the secret information.
