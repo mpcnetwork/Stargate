@@ -497,3 +497,24 @@ Decoding Process
 To decode, reverse the process by splitting the message, translating back from character sets, and decrypting the hidden part.
 
 By creating a language that switches character sets and incorporates encrypted hidden messages, we've constructed a highly complex and perplexing system. This multi-layered approach not only enhances security but also opens up new dimensions of linguistic creativity.
+
+Creating a browser-extension that can like a video and click the bell icon in one go
+
+// content.js
+// Add a new button to the YouTube page
+let likeBellButton = document.createElement("button");
+likeBellButton.innerText = "LIKE & BELL";
+likeBellButton.style.position = "fixed";
+likeBellButton.style.bottom = "10px";
+likeBellButton.style.right = "10px";
+likeBellButton.style.zIndex = "1000";
+
+// Function to like the video and click the bell
+likeBellButton.addEventListener("click", () => {
+    let likeButton = document.querySelector("button[aria-label='I like this']");
+    let bellButton = document.querySelector("button[aria-label='Subscribe']");
+    if (likeButton) likeButton.click();
+    if (bellButton) bellButton.click();
+});
+
+document.body.appendChild(likeBellButton);
