@@ -321,3 +321,19 @@ draw.text((50, 50), "Your custom text", font=font, fill=(0, 0, 0))
 
 # Save the image
 image.save("custom_text_image.png")
+
+creating a custom font
+
+from PIL import Image, ImageDraw, ImageFont
+
+# Load the custom font
+font_path = "path_to_your_custom_font.ttf"  # Replace with the path to your custom font
+font = ImageFont.truetype(font_path, 50)
+
+# Create an image with the custom text
+image = Image.new("RGB", (500, 200), (255, 255, 255))
+draw = ImageDraw.Draw(image)
+draw.text((50, 50), "∆ΠΣ oΣΠ∆", font=font, fill=(0, 0, 0))
+
+# Save the image
+image.save("custom_text_image.png")
