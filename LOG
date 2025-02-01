@@ -244,3 +244,27 @@ model.summary()
 # Train the model
 model.fit(padded_sequences, labels, epochs=10, batch_size=32
 
+Searching for layered encryption methods
+
+from cryptography.fernet import Fernet
+
+# Generate keys (in practice, these keys would be provided)
+key1 = Fernet.generate_key()
+key2 = Fernet.generate_key()
+
+# Encrypt a message with the first key
+cipher1 = Fernet(key1)
+encrypted_message = cipher1.encrypt(b"Secret Message")
+
+# Encrypt the already encrypted message with the second key
+cipher2 = Fernet(key2)
+double_encrypted_message = cipher2.encrypt(encrypted_message)
+
+# Decryption process
+# Decrypt with the second key
+decrypted_message_layer1 = cipher2.decrypt(double_encrypted_message)
+
+# Decrypt with the first key
+decrypted_message = cipher1.decrypt(decrypted_message_layer1)
+
+print(decrypted_message.decode())  # Output: Secret Message
